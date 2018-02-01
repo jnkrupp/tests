@@ -20,6 +20,6 @@ deploy:
 #  file: "FILE TO UPLOAD"
 #  echo "Begin deploy"
   skip_cleanup: true
-#  on:
-#    tags: true
+  on:
+    branch: feature/travis-release-testing
 

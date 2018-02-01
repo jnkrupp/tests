@@ -16,7 +16,7 @@ script:
  - echo "Begin script"
 
 deploy:
-#  provider: releases
+  provider: releases
 #  file: "FILE TO UPLOAD"
 #  echo "Begin deploy"
   skip_cleanup: true

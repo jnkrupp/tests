@@ -1,0 +1,25 @@
+sudo: required
+
+
+services:
+ - docker
+
+language: python
+
+before_install:
+ - sudo apt-get update
+ - git clone https://github.com/jnkrupp/hello-world.git
+ - cd hello-world
+ - git checkout feature/new-feature-branch
+
+script:
+ - echo "Begin script"
+
+deploy:
+  provider: releases
+#  file: "FILE TO UPLOAD"
+  echo "Begin deploy"
+  skip_cleanup: true
+  on:
+    tags: true
+

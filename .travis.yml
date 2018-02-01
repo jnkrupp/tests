@@ -15,11 +15,11 @@ before_install:
 script:
  - echo "Begin script"
 
-#deploy:
-#  provider: releases
+deploy:
+  provider: releases
 #  file: "FILE TO UPLOAD"
-#  echo "Begin deploy"
-#  skip_cleanup: true
+  echo "Begin deploy"
+  skip_cleanup: true
 #  on:
 #    tags: true
 

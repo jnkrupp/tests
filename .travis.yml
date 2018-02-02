@@ -6,20 +6,22 @@ services:
 language: python
 
 before_install:
-# - echo "Before install"
+ - echo "Before install"
  - sudo apt-get update
  - git clone https://github.com/jnkrupp/tests.git
  - cd tests
  - git checkout feature/travis-release-testing
+ - travis encrypt-file super-secret.txt
+ - openssl aes-256-cbc -K $encrypted_0a6446eb3ae3_key -iv $encrypted_0a6446eb3ae3_iv -in super_secret.txt.enc -out super_secret.txt -d
 
 script:
  - echo "Begin script"
 
-deploy:
-  provider: releases
+#deploy:
+#  provider: releases
 #  file: "FILE TO UPLOAD"
 #  echo "Begin deploy"
-  skip_cleanup: true
-  on:
-    branch: feature/travis-release-testing
+#  skip_cleanup: true
+#  on:
+#    branch: feature/travis-release-testing
 

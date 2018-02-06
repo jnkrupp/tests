@@ -8,6 +8,7 @@ language: python
 
 before_install:
  - echo "Before install"
+ - sudo gem install travis
  - sudo apt-get update
  - git clone https://github.com/jnkrupp/tests.git
  - cd tests

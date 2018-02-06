@@ -10,6 +10,7 @@ before_install:
  - echo "Before install"
  - sudo apt-get update
  - sudo apt-get install ruby-dev
+ - sudo gem update
  - sudo gem install travis
  - git clone https://github.com/jnkrupp/tests.git
  - cd tests

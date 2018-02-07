@@ -16,7 +16,7 @@ before_install:
 
 script:
  - echo "Begin script"
-# - make encrypt
+ - echo "%(cat super_secret.txt)"
 
 #deploy:
 #  provider: releases

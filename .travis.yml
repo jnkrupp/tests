@@ -8,10 +8,12 @@ language: python
 
 before_install:
  - echo "Before install"
+ - sudo apt-add-repository ppa:brightbox/ruby-ng
  - sudo apt-get update
- - sudo apt-get install ruby2.4
+ - sudo apt-get install ruby2.4 ruby2.4-dev
  - sudo gem update
  - sudo gem install travis
+# clone the github repo and cd into it
  - git clone https://github.com/jnkrupp/tests.git
  - cd tests
  - git checkout feature/travis-release-testing

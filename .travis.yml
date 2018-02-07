@@ -16,7 +16,7 @@ before_install:
 
 script:
  - echo "Begin script"
- - echo "$(<cat super_secret.txt)"
+ - echo "$(<super_secret.txt)"
 
 #deploy:
 #  provider: releases

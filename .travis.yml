@@ -16,8 +16,8 @@ before_install:
 
 script:
  - echo "Begin script"
- - mkdir ./secrets
- - tar -xzf secrets.tar -C ./secrets
+# - mkdir ./secrets
+ - tar -xvf secrets.tar -C ./secrets
  - ls
  - cd secrets
  - echo "$(<super_secret.txt)"

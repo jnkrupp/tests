@@ -16,7 +16,7 @@ before_install:
 
 script:
  - echo "Begin script"
-# - mkdir ./secrets
+ - mkdir ./secrets
  - tar -xvf secrets.tar -C ./secrets
  - ls
  - cd secrets

@@ -1,0 +1,34 @@
+sudo: required
+
+services:
+ - docker
+
+language: python
+
+before_install:
+ - echo "Before install"
+ - sudo apt-get update
+# clone the github repo and cd into it
+ - git clone https://github.com/jnkrupp/tests.git
+ - cd tests
+ - git checkout feature/travis-release-testing
+ - openssl aes-256-cbc -K $encrypted_82facae99918_key -iv $encrypted_82facae99918_iv -in secrets.tar.enc -out secrets.tar -d
+
+script:
+ - echo "Begin script"
+ - mkdir ./secrets
+ - tar -xvf secrets.tar -C ./secrets
+ - ls
+ - cd secrets
+ - echo "$(<super_secret.txt)"
+ - echo "$(<super_secret2.txt)"
+ - echo $secret_env_variable
+
+#deploy:
+#  provider: releases
+#  file: "FILE TO UPLOAD"
+#  echo "Begin deploy"
+#  skip_cleanup: true
+#  on:
+#    branch: feature/travis-release-testing
+
